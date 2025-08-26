@@ -15,14 +15,13 @@ void drawCircle(GLfloat center[], GLfloat radius) {
     glEnd();
 }
 
-void drawRectangle(GLfloat p[]) {
-    glBegin(GL_TRIANGLES);
-    glVertex2f(p[0], p[1]); 
-    glVertex2f(p[2], p[3]);
-    glVertex2f(p[4], p[5]);
-    glVertex2f(p[2], p[3]);
-    glVertex2f(p[4], p[5]);
-    glVertex2f(p[6], p[7]);
+void drawRectangle(GLfloat p[], GLfloat l, GLfloat b) {
+    glBegin(GL_LINE_STRIP);
+    glVertex2f(p[0], p[1]);
+    glVertex2f(p[0]+l, p[1]);
+    glVertex2f(p[0]+l, p[1]+b);
+    glVertex2f(p[0], p[1]+b);
+    glVertex2f(p[0], p[1]);
     glEnd();
 }
 
@@ -43,10 +42,13 @@ int main() {
     while(!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT);
         // Draw
-        GLfloat a[2] = {0.0f, 0.0f};
-        GLfloat p[8] = {0.0f, 0.0f, 0.5f, 0.0f, 0.0f, 0.5f, 0.5f, 0.5f};
-        drawCircle(a, 0.5f);
-        drawRectangle(p);
+        GLfloat c1[2] = {-0.4f, -0.7f};
+        GLfloat c2[2] = {0.4f, -0.7f};
+        drawCircle(c1, 0.3f);
+        drawCircle(c2, 0.3f);
+        
+        GLfloat p[2] = {-0.7f, -0.55f};
+        drawRectangle(p, 1.4f, 0.8f);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }

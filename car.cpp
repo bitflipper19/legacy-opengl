@@ -10,7 +10,7 @@ void drawCircle(GLfloat center[], GLfloat radius) {
         float theta = 2.0f * 3.1415926f * float(i) / float(smoothness);
         float x = radius * cosf(theta);
         float y = radius * sinf(theta);
-        glVertex2f(center[0] + x, center[1] + y); // Parametric equation of a circle
+        glVertex2f(center[0] + x, center[1] + y); // Parametric equation of a circle btw
     }
     glEnd();
 }

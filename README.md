@@ -15,7 +15,7 @@ sudo apt install libglfw3-dev libglew-dev
 
 ## To compile
 ```bash
-g++ main.cpp -o sym -lGL -lglfw -lGLEW
+g++ {fileName}.cpp -o sym -lGL -lglfw -lGLEW
 ```
 
 ## To run

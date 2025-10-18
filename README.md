@@ -1,4 +1,4 @@
-# OpenGL Setup on Ubuntu
+# OpenGL Setup
 
 This project uses **OpenGL**, **GLFW**, and **GLEW** for graphics rendering.
 Availability of a C++ compiler is obvious.
